@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.0" xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+        http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
+
+    <!-- Named Query to find all users -->
+    <named-query name="User.findById">
+        <query>SELECT u FROM User u WHERE u.id = ?1</query>
+    </named-query>
+
+    <!-- Other named queries -->
+    <named-query name="User.findAllUsingNamedQuery">
+        <query>SELECT u FROM User u</query>
+    </named-query>
+
+    <!-- Named Query to find a user by username -->
+    <named-query name="User.findByUsername">
+        <query>SELECT u FROM User u WHERE u.name = :username</query>
+    </named-query>
+
+
+
+    <entity class="com.SpringJPADemoMaven.Entity.User"/>
+</entity-mappings>
